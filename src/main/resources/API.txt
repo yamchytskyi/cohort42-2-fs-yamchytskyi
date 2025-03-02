@@ -1,0 +1,14 @@
+POST - creation
+
+GET - reading
+
+PUT - updating
+
+PATCH - updating
+
+DELETE - deleting
+
+additional commands:
+OPTION - for extraction parameters of information
+
+HEAD - for extraction body of informations
