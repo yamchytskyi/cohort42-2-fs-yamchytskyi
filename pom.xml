@@ -29,6 +29,9 @@
     <properties>
         <java.version>17</java.version>
         <javafaker.version>1.0.2</javafaker.version>
+        <lombok.version>1.18.36</lombok.version>
+        <org.slf4j-api.version>2.0.9</org.slf4j-api.version>
+        <logback-classic>1.4.11</logback-classic>
     </properties>
     <dependencies>
         <dependency>
@@ -38,9 +41,35 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.projectlombok</groupId>-->
+<!--            <artifactId>lombok</artifactId>-->
+<!--            <version>${lombok.version}</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; SLF4J API is needed &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.slf4j</groupId>-->
+<!--            <artifactId>slf4j-api</artifactId>-->
+<!--            <version>${org.slf4j-api.version}</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; Add an SLF4J Binding for logging - e.g., Logback &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>ch.qos.logback</groupId>-->
+<!--            <artifactId>logback-classic</artifactId>-->
+<!--            <version>${logback-classic}</version>-->
+<!--        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
         <dependency>
