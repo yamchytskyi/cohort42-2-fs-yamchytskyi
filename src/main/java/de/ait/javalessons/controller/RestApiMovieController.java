@@ -1,6 +1,9 @@
 package de.ait.javalessons.controller;
 
+import com.github.javafaker.Faker;
 import de.ait.javalessons.model.Movie;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +22,8 @@ public class RestApiMovieController {
 
     private List<Movie> moviesList = new ArrayList<>();
 
+    Faker faker = new Faker();
+
     public RestApiMovieController() {
         moviesList.addAll(List.of(
                 new Movie(1, "Alien", "Sci-fi", 1979),
@@ -33,30 +38,30 @@ public class RestApiMovieController {
         return moviesList;
     }
 
+    // what's going on?
     @GetMapping("/{id}")
-    Optional<Movie> getMovieById(@PathVariable int id) {
-        for (Movie movie : moviesList) {
-            if(movie.getId() == (id)) {
-                return Optional.of(movie);
-            }
-        }
-        return Optional.empty();
+    ResponseEntity<Movie> getMovieById(@PathVariable int id) {
+        return moviesList.stream()
+                .filter(movie -> movie.getId() == id)
+                .findFirst()
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
     }
 
     @PostMapping
-    String addMovie(@RequestBody Movie movie) {
+    ResponseEntity<Movie> addMovie(@RequestBody Movie movie) {
         moviesList.add(movie);
-        return "Success...";
-    }
+        return ResponseEntity.status(HttpStatus.CREATED).body(movie);
 
+    }
+// todo finish the method
     @DeleteMapping("/{id}")
-    String deleteMovieById(@PathVariable int id) {
-        for (Movie movie : moviesList) {
-            if(movie.getId() == (id)) {
-                moviesList.remove(movie);
-                return "The movie has been deleted...";
-            }
-        }
-        return "The movie doesn't exist...";
+    ResponseEntity<String> deleteMovieById(@PathVariable int id) {
+                boolean result = moviesList.removeIf(movie -> movie.getId() == id);
+                if(result) {
+                    return ResponseEntity.ok("The movie has been deleted...");
+                } else {
+                    return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Movie with id " + id + "has not found");
+                }
     }
 }

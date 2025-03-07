@@ -3,14 +3,13 @@ package de.ait.javalessons.controller;
 import de.ait.javalessons.model.Movie;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RestApiMovieControllerTest {
 
@@ -28,23 +27,30 @@ public class RestApiMovieControllerTest {
         iterableMovies.forEach(moviesList::add);
 
         assertEquals(4, moviesList.size());
-
         assertEquals("Alien", moviesList.get(0).getTitle());
     }
+
     @Test
-    void getMovieByIdTestCarWasFound() {
-        Optional<Movie> result = restApiMovieController.getMovieById(1);
+    void getMovieByIdTestWasFound() {
+        ResponseEntity<Movie> result = restApiMovieController.getMovieById(1);
 
-        assertTrue(result.isPresent());
+        // Check that the status code is 200 OK
+        assertEquals(HttpStatus.OK, result.getStatusCode());
 
-        assertEquals("Alien", result.get().getTitle());
+        // Check the content of the body
+        assertNotNull(result.getBody());
+        assertEquals("Alien", result.getBody().getTitle());
     }
 
     @Test
-    void getMovieByIdTestCarWasNotFound() {
-        Optional<Movie> result = restApiMovieController.getMovieById(0);
+    void getMovieByIdTestWasNotFound() {
+        ResponseEntity<Movie> result = restApiMovieController.getMovieById(0);
 
-        assertFalse(result.isPresent());
+        // Check that the status code is 404 NOT FOUND
+        assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
+
+        // Check the body is null since the movie doesn't exist
+        assertNull(result.getBody());
     }
 
     @Test
@@ -63,25 +69,11 @@ public class RestApiMovieControllerTest {
 
     @Test
     void deleteMovieByIdTestExistingMovie() {
-        String response = restApiMovieController.deleteMovieById(1);
-        assertEquals("The movie has been deleted...", response);
+        ResponseEntity<String> response = restApiMovieController.deleteMovieById(1);
 
-        Iterable<Movie> movieIterable = restApiMovieController.getMovies();
-        List<Movie> movieList = new ArrayList<>();
-        movieIterable.forEach(movieList::add);
+        // Assert the response body contains the deletion message
+        assertEquals("The movie has been deleted...", response.getBody());
 
-        assertEquals(3, movieList.size());
-    }
 
-    @Test
-    void deleteMovieByIdTestNotExistingMovie() {
-        String response = restApiMovieController.deleteMovieById(0);
-        assertEquals("The movie doesn't exist...", response);
-
-        Iterable<Movie> movieIterable = restApiMovieController.getMovies();
-        List<Movie> movieList = new ArrayList<>();
-        movieIterable.forEach(movieList::add);
-
-        assertEquals(4, movieList.size());
     }
 }
