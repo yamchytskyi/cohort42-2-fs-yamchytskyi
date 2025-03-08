@@ -1,7 +1,6 @@
-package de.ait.javalessons.controller;
+package de.ait.homeworks.homework_08.controller;
 
-import com.github.javafaker.Faker;
-import de.ait.javalessons.model.Movie;
+import de.ait.homeworks.homework_08.model.Movie;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,15 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/movies")
 public class RestApiMovieController {
 
     private List<Movie> moviesList = new ArrayList<>();
-
-    Faker faker = new Faker();
 
     public RestApiMovieController() {
         moviesList.addAll(List.of(
@@ -54,12 +50,11 @@ public class RestApiMovieController {
         return ResponseEntity.status(HttpStatus.CREATED).body(movie);
 
     }
-// todo finish the method
     @DeleteMapping("/{id}")
     ResponseEntity<String> deleteMovieById(@PathVariable int id) {
                 boolean result = moviesList.removeIf(movie -> movie.getId() == id);
                 if(result) {
-                    return ResponseEntity.ok("The movie has been deleted...");
+                    return ResponseEntity.ok("The movie with id " + id + " has been deleted...");
                 } else {
                     return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Movie with id " + id + "has not found");
                 }

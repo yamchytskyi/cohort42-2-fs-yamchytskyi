@@ -1,4 +1,4 @@
-package de.ait.javalessons.model;
+package de.ait.homeworks.homework_08.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

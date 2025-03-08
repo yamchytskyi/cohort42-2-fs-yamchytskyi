@@ -1,6 +1,6 @@
-package de.ait.javalessons.controller;
+package de.ait.homeworks.homework_08.controller;
 
-import de.ait.javalessons.model.Movie;
+import de.ait.homeworks.homework_08.model.Movie;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
