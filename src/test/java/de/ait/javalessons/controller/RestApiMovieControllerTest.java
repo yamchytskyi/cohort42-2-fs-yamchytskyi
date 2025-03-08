@@ -40,7 +40,7 @@ public class RestApiMovieControllerTest {
         // Check the content of the body
         assertNotNull(result.getBody());
         assertEquals("Alien", result.getBody().getTitle());
-    }
+}
 
     @Test
     void getMovieByIdTestWasNotFound() {

@@ -1,13 +1,24 @@
 package de.ait.javalessons.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Car {
 
-    private final  String id;
+    @Id
+    private String id;
     private String name;
+
+    public Car() {}
 
     public Car(String id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getId() {

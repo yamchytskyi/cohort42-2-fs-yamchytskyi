@@ -25,9 +25,10 @@ public class RestApiCarControllerTest {
     // Здесь создается новый экземпляр контроллера.
     // Method that runs before each test.
     // Here, a new instance of the controller is created.
+    //todo repo
     @BeforeEach
     void setUp() {
-        restApiCarController = new RestApiCarController();
+        restApiCarController = new RestApiCarController(null);
     }
 
     // Тест для проверки метода получения списка автомобилей.
