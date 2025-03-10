@@ -1,6 +1,7 @@
 package de.ait.homeworks.homework_08.controller;
 
 import de.ait.homeworks.homework_08.model.Movie;
+import de.ait.homeworks.homework_08.repo.MovieRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
@@ -17,7 +18,7 @@ public class RestApiMovieControllerTest {
 
     @BeforeEach
     void setUp() {
-        restApiMovieController = new RestApiMovieController();
+        restApiMovieController = new RestApiMovieController(null);
     }
 
     @Test
