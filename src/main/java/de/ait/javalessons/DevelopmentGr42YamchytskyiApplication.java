@@ -9,5 +9,4 @@ public class DevelopmentGr42YamchytskyiApplication {
     public static void main(String[] args) {
         SpringApplication.run(DevelopmentGr42YamchytskyiApplication.class, args);
     }
-
 }
