@@ -1,0 +1,27 @@
+DRY - don't repeat yourself
+
+SSOT - single source of truth - only repository should change database data
+
+KISS - make it stupid simple
+
+SOLID
+
+S - ! single responsibility principle
+one methode should to do one thing.
+(if your method calls doItAndIt - it's a shit, because "and". so only one thing)
+
+O - open/close
+your modules should be available to extends but closed to changing
+
+L - Liskov substitution principle
+classes, which extend basic classes,
+ should be available to use children of that class without knowing
+ their realisation
+
+I - interface segregation principle
+interfaces should contain same area logic
+it's better to do two small interfaces that one big
+
+D - dependency inversion principle
+it's better to use abstraction
+
