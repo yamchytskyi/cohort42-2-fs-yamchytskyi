@@ -1,6 +1,7 @@
 package de.ait.javalessons.controller;
 
 import de.ait.javalessons.model.Car;
+import de.ait.javalessons.repositories.FakeCarRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
@@ -21,14 +22,17 @@ public class RestApiCarControllerTest {
     // Instance of the controller to be tested.
     private RestApiCarController restApiCarController;
 
+    private FakeCarRepository fakeCarRepository;
+
     // Метод, который выполняется перед каждым тестом.
     // Здесь создается новый экземпляр контроллера.
     // Method that runs before each test.
     // Here, a new instance of the controller is created.
-    //todo repo
     @BeforeEach
     void setUp() {
-        restApiCarController = new RestApiCarController(null);
+        fakeCarRepository = new FakeCarRepository();
+
+        restApiCarController = new RestApiCarController(fakeCarRepository);
     }
 
     // Тест для проверки метода получения списка автомобилей.
