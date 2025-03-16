@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,7 +32,7 @@ public class BankAccountController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<BankAccount> getBankAccountById(@RequestParam Long id) {
+    public ResponseEntity<BankAccount> getBankAccountById(@PathVariable Long id) {
         return bankAccountService.findBankAccountById(id)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
@@ -48,12 +49,12 @@ public class BankAccountController {
     }
 
     @PostMapping("/{id}/deposit")
-    public ResponseEntity<Double> deposit(@RequestParam Long id, @RequestParam double amount) {
+    public ResponseEntity<Double> deposit(@PathVariable Long id, @RequestParam double amount) {
         return ResponseEntity.ok(bankAccountService.deposit(amount, id));
     }
 
     @PostMapping("/{id}/withdraw")
-    public ResponseEntity<Double> withdraw(@RequestParam Long id, @RequestParam double amount) {
+    public ResponseEntity<Double> withdraw(@PathVariable Long id, @RequestParam double amount) {
         return ResponseEntity.ok(bankAccountService.withdraw(amount, id));
     }
 }
