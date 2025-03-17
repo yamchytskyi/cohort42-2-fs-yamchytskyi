@@ -28,33 +28,40 @@ public class BankAccountController {
     @GetMapping
     public ResponseEntity<List<BankAccount>> getAllBankAccounts() {
         List<BankAccount> bankAccounts = bankAccountService.getAllBankAccounts();
+        log.info("Found {} bank accounts", bankAccounts.size());
         return ResponseEntity.ok(bankAccounts);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<BankAccount> getBankAccountById(@PathVariable Long id) {
+    @PostMapping
+    public ResponseEntity<BankAccount> createBankAccount(@RequestParam String accountNumber,
+                                                         @RequestParam String ownerName) {
+        BankAccount bankAccount = new BankAccount(accountNumber,ownerName,0.0);
+        BankAccount savedBankAccount = bankAccountService.saveNewBankAccount(bankAccount);
+        if(savedBankAccount == null){
+            log.error("Error saving bank account");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+        log.info("Saved bank account with id {}", savedBankAccount.getId());
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedBankAccount);
+    }
+
+    @GetMapping({"/{id}"})
+    public ResponseEntity<BankAccount> getBankAccountById(@PathVariable  Long id){
+        log.info("Getting bank account with id {}", id);
         return bankAccountService.findBankAccountById(id)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
     }
 
-    @PostMapping
-    public ResponseEntity<BankAccount> createBankAccount(@RequestParam String accountNumber, @RequestParam String ownerName) {
-        BankAccount bankAccount = new BankAccount(accountNumber, ownerName, 0.0);
-        BankAccount savedBankAccount = bankAccountService.saveNewBankAccount(bankAccount);
-        if(savedBankAccount == null) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
-        }
-        return  ResponseEntity.status(HttpStatus.CREATED).body(savedBankAccount);
-    }
-
     @PostMapping("/{id}/deposit")
-    public ResponseEntity<Double> deposit(@PathVariable Long id, @RequestParam double amount) {
+    public ResponseEntity<Double> deposit(@PathVariable Long id, @RequestParam double amount){
+        log.info("Depositing {} to bank account with id {}", amount, id);
         return ResponseEntity.ok(bankAccountService.deposit(amount, id));
     }
 
     @PostMapping("/{id}/withdraw")
-    public ResponseEntity<Double> withdraw(@PathVariable Long id, @RequestParam double amount) {
+    public ResponseEntity<Double> withdraw(@PathVariable Long id, @RequestParam double amount){
+        log.info("Withdrawing {} from bank account with id {}", amount, id);
         return ResponseEntity.ok(bankAccountService.withdraw(amount, id));
     }
 }

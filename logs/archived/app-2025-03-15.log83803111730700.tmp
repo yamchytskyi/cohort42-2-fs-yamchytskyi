@@ -8006,12 +8006,12 @@ java.lang.IllegalArgumentException: Amount is greater than the current balance
 2025-03-15 12:05:54.819 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.BankAccountRepository.fragments#0'
 2025-03-15 12:05:54.819 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpaSharedEM_entityManagerFactory'
 2025-03-15 12:05:54.844 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpaMappingContext'
-2025-03-15 12:05:54.844 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Initializing JpaMetamodelMappingContext…
+2025-03-15 12:05:54.844 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Initializing JpaMetamodelMappingContextï¿½
 2025-03-15 12:05:54.872 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Finished initializing JpaMetamodelMappingContext
 2025-03-15 12:05:54.911 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:05:54.972 [main] DEBUG o.h.s.internal.StatisticsInitiator - Statistics initialized [enabled=false]
 2025-03-15 12:05:54.974 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
-2025-03-15 12:05:55.050 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.BankAccountRepository…
+2025-03-15 12:05:55.050 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.BankAccountRepositoryï¿½
 2025-03-15 12:05:55.081 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:05:55.119 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for de.ait.javalessons.repositories.BankAccountRepository.
 2025-03-15 12:05:55.128 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'bankAccountService' via constructor to bean named 'bankAccountRepository'
@@ -8022,7 +8022,7 @@ java.lang.IllegalArgumentException: Amount is greater than the current balance
 2025-03-15 12:05:55.179 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.named-queries#1'
 2025-03-15 12:05:55.179 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.CarRepository.fragments#0'
 2025-03-15 12:05:55.179 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
-2025-03-15 12:05:55.179 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.CarRepository…
+2025-03-15 12:05:55.179 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.CarRepositoryï¿½
 2025-03-15 12:05:55.179 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:05:55.179 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for de.ait.javalessons.repositories.CarRepository.
 2025-03-15 12:05:55.179 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'restApiCarController' via constructor to bean named 'carRepository'
@@ -11026,12 +11026,12 @@ Unconditional classes:
 2025-03-15 12:06:08.288 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.BankAccountRepository.fragments#0'
 2025-03-15 12:06:08.293 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpaSharedEM_entityManagerFactory'
 2025-03-15 12:06:08.321 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpaMappingContext'
-2025-03-15 12:06:08.321 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Initializing JpaMetamodelMappingContext…
+2025-03-15 12:06:08.321 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Initializing JpaMetamodelMappingContextï¿½
 2025-03-15 12:06:08.343 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Finished initializing JpaMetamodelMappingContext
 2025-03-15 12:06:08.376 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:06:08.430 [main] DEBUG o.h.s.internal.StatisticsInitiator - Statistics initialized [enabled=false]
 2025-03-15 12:06:08.435 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
-2025-03-15 12:06:08.497 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.BankAccountRepository…
+2025-03-15 12:06:08.497 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.BankAccountRepositoryï¿½
 2025-03-15 12:06:08.513 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:06:08.544 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for de.ait.javalessons.repositories.BankAccountRepository.
 2025-03-15 12:06:08.544 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'bankAccountService' via constructor to bean named 'bankAccountRepository'
@@ -11042,7 +11042,7 @@ Unconditional classes:
 2025-03-15 12:06:08.586 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.named-queries#1'
 2025-03-15 12:06:08.590 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.CarRepository.fragments#0'
 2025-03-15 12:06:08.590 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
-2025-03-15 12:06:08.593 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.CarRepository…
+2025-03-15 12:06:08.593 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.CarRepositoryï¿½
 2025-03-15 12:06:08.593 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:06:08.593 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for de.ait.javalessons.repositories.CarRepository.
 2025-03-15 12:06:08.593 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'restApiCarController' via constructor to bean named 'carRepository'
@@ -14046,12 +14046,12 @@ Unconditional classes:
 2025-03-15 12:09:25.664 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.BankAccountRepository.fragments#0'
 2025-03-15 12:09:25.678 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpaSharedEM_entityManagerFactory'
 2025-03-15 12:09:25.703 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpaMappingContext'
-2025-03-15 12:09:25.703 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Initializing JpaMetamodelMappingContext…
+2025-03-15 12:09:25.703 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Initializing JpaMetamodelMappingContextï¿½
 2025-03-15 12:09:25.728 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Finished initializing JpaMetamodelMappingContext
 2025-03-15 12:09:25.755 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:09:25.798 [main] DEBUG o.h.s.internal.StatisticsInitiator - Statistics initialized [enabled=false]
 2025-03-15 12:09:25.804 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
-2025-03-15 12:09:25.861 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.BankAccountRepository…
+2025-03-15 12:09:25.861 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.BankAccountRepositoryï¿½
 2025-03-15 12:09:25.867 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:09:25.908 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for de.ait.javalessons.repositories.BankAccountRepository.
 2025-03-15 12:09:25.914 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'bankAccountService' via constructor to bean named 'bankAccountRepository'
@@ -14062,7 +14062,7 @@ Unconditional classes:
 2025-03-15 12:09:25.946 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.named-queries#1'
 2025-03-15 12:09:25.946 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.CarRepository.fragments#0'
 2025-03-15 12:09:25.946 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
-2025-03-15 12:09:25.946 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.CarRepository…
+2025-03-15 12:09:25.946 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.CarRepositoryï¿½
 2025-03-15 12:09:25.946 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:09:25.946 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for de.ait.javalessons.repositories.CarRepository.
 2025-03-15 12:09:25.946 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'restApiCarController' via constructor to bean named 'carRepository'
@@ -17066,12 +17066,12 @@ Unconditional classes:
 2025-03-15 12:09:38.396 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.BankAccountRepository.fragments#0'
 2025-03-15 12:09:38.398 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpaSharedEM_entityManagerFactory'
 2025-03-15 12:09:38.428 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpaMappingContext'
-2025-03-15 12:09:38.428 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Initializing JpaMetamodelMappingContext…
+2025-03-15 12:09:38.428 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Initializing JpaMetamodelMappingContextï¿½
 2025-03-15 12:09:38.447 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Finished initializing JpaMetamodelMappingContext
 2025-03-15 12:09:38.475 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:09:38.507 [main] DEBUG o.h.s.internal.StatisticsInitiator - Statistics initialized [enabled=false]
 2025-03-15 12:09:38.507 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
-2025-03-15 12:09:38.573 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.BankAccountRepository…
+2025-03-15 12:09:38.573 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.BankAccountRepositoryï¿½
 2025-03-15 12:09:38.585 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:09:38.619 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for de.ait.javalessons.repositories.BankAccountRepository.
 2025-03-15 12:09:38.619 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'bankAccountService' via constructor to bean named 'bankAccountRepository'
@@ -17082,7 +17082,7 @@ Unconditional classes:
 2025-03-15 12:09:38.663 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.named-queries#1'
 2025-03-15 12:09:38.665 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.CarRepository.fragments#0'
 2025-03-15 12:09:38.665 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
-2025-03-15 12:09:38.667 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.CarRepository…
+2025-03-15 12:09:38.667 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.CarRepositoryï¿½
 2025-03-15 12:09:38.667 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:09:38.667 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for de.ait.javalessons.repositories.CarRepository.
 2025-03-15 12:09:38.667 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'restApiCarController' via constructor to bean named 'carRepository'
@@ -20086,12 +20086,12 @@ Unconditional classes:
 2025-03-15 12:09:52.474 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.BankAccountRepository.fragments#0'
 2025-03-15 12:09:52.474 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpaSharedEM_entityManagerFactory'
 2025-03-15 12:09:52.514 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpaMappingContext'
-2025-03-15 12:09:52.514 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Initializing JpaMetamodelMappingContext…
+2025-03-15 12:09:52.514 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Initializing JpaMetamodelMappingContextï¿½
 2025-03-15 12:09:52.524 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Finished initializing JpaMetamodelMappingContext
 2025-03-15 12:09:52.554 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:09:52.589 [main] DEBUG o.h.s.internal.StatisticsInitiator - Statistics initialized [enabled=false]
 2025-03-15 12:09:52.589 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
-2025-03-15 12:09:52.644 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.BankAccountRepository…
+2025-03-15 12:09:52.644 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.BankAccountRepositoryï¿½
 2025-03-15 12:09:52.648 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:09:52.680 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for de.ait.javalessons.repositories.BankAccountRepository.
 2025-03-15 12:09:52.686 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'bankAccountService' via constructor to bean named 'bankAccountRepository'
@@ -20102,7 +20102,7 @@ Unconditional classes:
 2025-03-15 12:09:52.720 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.named-queries#0'
 2025-03-15 12:09:52.720 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.CarRepository.fragments#0'
 2025-03-15 12:09:52.720 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
-2025-03-15 12:09:52.720 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.CarRepository…
+2025-03-15 12:09:52.720 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.CarRepositoryï¿½
 2025-03-15 12:09:52.720 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:09:52.728 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for de.ait.javalessons.repositories.CarRepository.
 2025-03-15 12:09:52.728 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'restApiCarController' via constructor to bean named 'carRepository'
@@ -23106,12 +23106,12 @@ Unconditional classes:
 2025-03-15 12:10:05.790 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.BankAccountRepository.fragments#0'
 2025-03-15 12:10:05.805 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpaSharedEM_entityManagerFactory'
 2025-03-15 12:10:05.833 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpaMappingContext'
-2025-03-15 12:10:05.833 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Initializing JpaMetamodelMappingContext…
+2025-03-15 12:10:05.833 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Initializing JpaMetamodelMappingContextï¿½
 2025-03-15 12:10:05.849 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Finished initializing JpaMetamodelMappingContext
 2025-03-15 12:10:05.874 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:10:05.915 [main] DEBUG o.h.s.internal.StatisticsInitiator - Statistics initialized [enabled=false]
 2025-03-15 12:10:05.931 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
-2025-03-15 12:10:05.979 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.BankAccountRepository…
+2025-03-15 12:10:05.979 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.BankAccountRepositoryï¿½
 2025-03-15 12:10:05.994 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:10:06.035 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for de.ait.javalessons.repositories.BankAccountRepository.
 2025-03-15 12:10:06.037 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'bankAccountService' via constructor to bean named 'bankAccountRepository'
@@ -23122,7 +23122,7 @@ Unconditional classes:
 2025-03-15 12:10:06.073 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.named-queries#1'
 2025-03-15 12:10:06.073 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.CarRepository.fragments#0'
 2025-03-15 12:10:06.073 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
-2025-03-15 12:10:06.073 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.CarRepository…
+2025-03-15 12:10:06.073 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.CarRepositoryï¿½
 2025-03-15 12:10:06.073 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:10:06.073 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for de.ait.javalessons.repositories.CarRepository.
 2025-03-15 12:10:06.088 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'restApiCarController' via constructor to bean named 'carRepository'
@@ -26126,12 +26126,12 @@ Unconditional classes:
 2025-03-15 12:26:27.701 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.BankAccountRepository.fragments#0'
 2025-03-15 12:26:27.704 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpaSharedEM_entityManagerFactory'
 2025-03-15 12:26:27.726 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpaMappingContext'
-2025-03-15 12:26:27.726 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Initializing JpaMetamodelMappingContext…
+2025-03-15 12:26:27.726 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Initializing JpaMetamodelMappingContextï¿½
 2025-03-15 12:26:27.743 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Finished initializing JpaMetamodelMappingContext
 2025-03-15 12:26:27.770 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:26:27.810 [main] DEBUG o.h.s.internal.StatisticsInitiator - Statistics initialized [enabled=false]
 2025-03-15 12:26:27.810 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
-2025-03-15 12:26:27.877 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.BankAccountRepository…
+2025-03-15 12:26:27.877 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.BankAccountRepositoryï¿½
 2025-03-15 12:26:27.890 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:26:27.919 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for de.ait.javalessons.repositories.BankAccountRepository.
 2025-03-15 12:26:27.919 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'bankAccountService' via constructor to bean named 'bankAccountRepository'
@@ -26142,7 +26142,7 @@ Unconditional classes:
 2025-03-15 12:26:27.966 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.named-queries#1'
 2025-03-15 12:26:27.966 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jpa.CarRepository.fragments#0'
 2025-03-15 12:26:27.966 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
-2025-03-15 12:26:27.966 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.CarRepository…
+2025-03-15 12:26:27.966 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for de.ait.javalessons.repositories.CarRepositoryï¿½
 2025-03-15 12:26:27.966 [main] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
 2025-03-15 12:26:27.966 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for de.ait.javalessons.repositories.CarRepository.
 2025-03-15 12:26:27.966 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'restApiCarController' via constructor to bean named 'carRepository'
