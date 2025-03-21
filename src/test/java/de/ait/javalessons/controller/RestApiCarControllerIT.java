@@ -1,6 +1,7 @@
 package de.ait.javalessons.controller;
 
 import de.ait.javalessons.model.Car;
+import de.ait.javalessons.repositories.CarRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -31,12 +34,21 @@ public class RestApiCarControllerIT {
     // Базовый URL для всех запросов к API автомобилей.
     // The base URL for all requests to the cars API.
     private static final String BASE_URL = "/cars";
+    @Autowired
+    private CarRepository carRepository;
 
     // Метод, который выполняется перед каждым тестом. В данном случае он пустой, но может быть использован для инициализации данных.
     // A method that runs before each test. In this case, it is empty but can be used for data initialization.
     @BeforeEach
     void setUp() {
+        carRepository.deleteAll();
 
+        carRepository.saveAll(List.of(
+                new Car("1", "BMW M1"),
+                new Car("2", "Audi A8"),
+                new Car("3", "Kia Spartage"),
+                new Car("4", "Volvo 960")
+        ));
     }
 
     // Тест для проверки метода получения списка автомобилей.

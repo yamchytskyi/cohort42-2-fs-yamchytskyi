@@ -46,7 +46,7 @@ public class BankAccountController {
     }
 
     @GetMapping({"/{id}"})
-    public ResponseEntity<BankAccount> getBankAccountById(@PathVariable  Long id){
+    public ResponseEntity<BankAccount> getBankAccountById(@ PathVariable Long id){
         log.info("Getting bank account with id {}", id);
         return bankAccountService.findBankAccountById(id)
                 .map(ResponseEntity::ok)
