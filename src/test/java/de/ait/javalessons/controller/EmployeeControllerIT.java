@@ -26,7 +26,7 @@ public class EmployeeControllerIT {
     void testGetPublicInfo() throws Exception {
         mockMvc.perform(get("/employees/public/info"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("User info, public information"));
+                .andExpect(content().string("User Info, public information"));
     }
 
     @Nested
@@ -39,7 +39,7 @@ public class EmployeeControllerIT {
         void testGetUserInfoAsUser() throws Exception {
             mockMvc.perform(get("/employees/user/info"))
                     .andExpect(status().isOk())
-                    .andExpect(content().string("User info, secured user information"));
+                    .andExpect(content().string("User Info, secured user information"));
         }
 
         @Test
@@ -60,7 +60,7 @@ public class EmployeeControllerIT {
         void testGetAdminInfoAsAdmin() throws Exception {
             mockMvc.perform(get("/employees/admin/info"))
                     .andExpect(status().isOk())
-                    .andExpect(content().string("User info, secured admin information"));
+                    .andExpect(content().string("Admin Info, secured admin information"));
         }
 
         @Test
