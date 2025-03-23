@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 public class BankAccount {
@@ -18,7 +19,9 @@ public class BankAccount {
 
     private double balance;
 
+
     public BankAccount() {
+
     }
 
     public BankAccount(String accountNumber, String ownerName, double balance) {

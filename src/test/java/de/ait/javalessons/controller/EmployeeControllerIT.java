@@ -21,12 +21,24 @@ public class EmployeeControllerIT {
     @Autowired
     private MockMvc mockMvc;
 
-    @Test
-    @DisplayName("Проверяем, что публичный эндпоинт доступен всем и возвращает правильный контент")
-    void testGetPublicInfo() throws Exception {
-        mockMvc.perform(get("/employees/public/info"))
-                .andExpect(status().isOk())
-                .andExpect(content().string("User info, public information"));
+    @Nested
+    @DisplayName("Public endpoint")
+    class publicEndpointTests {
+        @Test
+        @DisplayName("Проверяем, что публичный эндпоинт доступен всем и возвращает правильный контент")
+        void testGetPublicInfo() throws Exception {
+            mockMvc.perform(get("/employees/public/info"))
+                    .andExpect(status().isOk())
+                    .andExpect(content().string("User Info, public information"));
+        }
+
+        @Test
+        @DisplayName("Checking that product's public endpoint is available to everyone and returns the right conteng")
+        void testGetProductsPublicInfo() throws Exception {
+            mockMvc.perform(get("/products//public/list"))
+                    .andExpect(status().isOk())
+                    .andExpect(content().string("Apple, Banana, Mango, Orange"));
+        }
     }
 
     @Nested
@@ -39,13 +51,33 @@ public class EmployeeControllerIT {
         void testGetUserInfoAsUser() throws Exception {
             mockMvc.perform(get("/employees/user/info"))
                     .andExpect(status().isOk())
-                    .andExpect(content().string("User info, secured user information"));
+                    .andExpect(content().string("User Info, secured user information"));
         }
 
         @Test
         @DisplayName("Когда пользователь не авторизован, ")
         void testGetUserInfoAsAnonymous() throws Exception {
             mockMvc.perform(get("/employees/user/info"))
+                    .andExpect(status().is3xxRedirection());
+        }
+    }
+
+    @Nested
+    @DisplayName("Tests for endpoint /products/customer/cart")
+    class CustomerCartTests {
+        @Test
+        @DisplayName("When a customer is authorised with the role CUSTOMER, returns status 200 and requariement content")
+        @WithMockUser(username = "testCustomer", roles = {"CUSTOMER"})
+        void testGetCustomerCartAsCustomer() throws Exception {
+            mockMvc.perform(get("/products/customer/cart"))
+                    .andExpect(status().isOk())
+                    .andExpect(content().string("Apple: 3 kg, Banana: 2 kg"));
+        }
+
+        @Test
+        @DisplayName("When a user isn't authorized")
+        void testGetCustomerCartAnonymous() throws Exception {
+            mockMvc.perform(get("/products/customer/cart"))
                     .andExpect(status().is3xxRedirection());
         }
     }
@@ -60,7 +92,7 @@ public class EmployeeControllerIT {
         void testGetAdminInfoAsAdmin() throws Exception {
             mockMvc.perform(get("/employees/admin/info"))
                     .andExpect(status().isOk())
-                    .andExpect(content().string("User info, secured admin information"));
+                    .andExpect(content().string("Admin Info, secured admin information"));
         }
 
         @Test
@@ -75,6 +107,35 @@ public class EmployeeControllerIT {
         @DisplayName("Когда пользователь не авторизован, возвращается ошибка 401 (или 403)")
         void testGetAdminInfoAsAnonymous() throws Exception {
             mockMvc.perform(get("/employees/admin/info"))
+                    .andExpect(status().is3xxRedirection());
+        }
+    }
+
+    @Nested
+    @DisplayName("Tests for an endpoint /products/manager/add")
+    class ManagerAddTests {
+
+        @Test
+        @DisplayName("When a manager is authorized, returns status 200 and the requairement content")
+        @WithMockUser(username = "testManager", roles = {"MANAGER"})
+        void addProductToTheStoreAsManager() throws Exception {
+            mockMvc.perform(get("/products/manager/add"))
+                    .andExpect(status().isOk())
+                    .andExpect(content().string("What product do you want to add to the store?"));
+        }
+
+        @Test
+        @DisplayName("When the user doesn't have a role admin, returns error 403")
+        @WithMockUser(username = "testCustomer", roles = {"CUSTOMER"})
+        void addProductToTheStoreAsCustomer() throws Exception {
+            mockMvc.perform(get("/products/manager/add"))
+                    .andExpect(status().isForbidden());
+        }
+
+        @Test
+        @DisplayName("When the user isn't authorized, returns error 401(or 403)")
+        void addProductToTheStoreAsAnonymous() throws Exception {
+            mockMvc.perform(get("/products/manager/add"))
                     .andExpect(status().is3xxRedirection());
         }
     }
