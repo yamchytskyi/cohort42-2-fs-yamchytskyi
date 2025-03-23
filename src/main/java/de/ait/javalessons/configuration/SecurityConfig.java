@@ -34,8 +34,18 @@ public class SecurityConfig {
                 .roles("ADMIN")
                 .build();
 
+        UserDetails customer = User.withUsername("customer")
+                .password(passwordEncoder.encode("customerpass"))
+                .roles("CUSTOMER")
+                .build();
+
+        UserDetails manager = User.withUsername("manager")
+                .password(passwordEncoder.encode("managerpass"))
+                .roles("MANAGER")
+                .build();
+
         // Возвращает менеджер пользователей, который хранит пользователей в памяти.
-        return new InMemoryUserDetailsManager(user, admin);
+        return new InMemoryUserDetailsManager(user, admin, customer, manager);
     }
 
     @Bean
@@ -46,6 +56,9 @@ public class SecurityConfig {
                         .requestMatchers(("/employees/public/**")).permitAll() // Разрешает доступ к /employees/public/** всем пользователям.
                         .requestMatchers(("/employees/user/**")).hasRole("USER") // Разрешает доступ к /employees/user/** только пользователям с ролью USER.
                         .requestMatchers(("/employees/admin/**")).hasRole("ADMIN") // Разрешает доступ к /employees/admin/** только пользователям с ролью ADMIN.
+                        .requestMatchers(("/products/public/**")).permitAll()
+                        .requestMatchers(("/products/customer/**")).hasRole("CUSTOMER")
+                        .requestMatchers(("/products/manager/**")).hasRole("MANAGER")
                         .anyRequest().authenticated() // Все остальные запросы требуют аутентификации.
                 )
                 .formLogin(withDefaults()); // Включает форму входа по умолчанию.
