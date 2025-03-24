@@ -2,68 +2,55 @@ package de.ait.javalessons.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
-import static org.springframework.security.config.Customizer.withDefaults;
+import javax.sql.DataSource;
 
-@Configuration // Аннотация, указывающая, что этот класс содержит конфигурацию Spring.
+@Configuration
+@EnableWebSecurity
 public class SecurityConfig {
 
-    @Bean // Аннотация, указывающая, что метод возвращает bean, который должен быть управляем Spring контейнером.
+    @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(); // Создает и возвращает bean для кодирования паролей с использованием BCrypt.
+        return new BCryptPasswordEncoder();
     }
 
     @Bean
-    public InMemoryUserDetailsManager inMemoryUserDetailsManager(PasswordEncoder passwordEncoder) {
-        // Создает пользователя с именем "user", паролем "userpass" и ролью USER.
-        UserDetails user = User.withUsername("user")
-                .password(passwordEncoder.encode("userpass")) // Пароль кодируется с использованием BCrypt.
-                .roles("USER")
-                .build();
-
-        // Создает пользователя с именем "admin", паролем "adminpass" и ролью ADMIN.
-        UserDetails admin = User.withUsername("admin")
-                .password(passwordEncoder.encode("adminpass")) // Пароль кодируется с использованием BCrypt.
-                .roles("ADMIN")
-                .build();
-
-        UserDetails customer = User.withUsername("customer")
-                .password(passwordEncoder.encode("customerpass"))
-                .roles("CUSTOMER")
-                .build();
-
-        UserDetails manager = User.withUsername("manager")
-                .password(passwordEncoder.encode("managerpass"))
-                .roles("MANAGER")
-                .build();
-
-        // Возвращает менеджер пользователей, который хранит пользователей в памяти.
-        return new InMemoryUserDetailsManager(user, admin, customer, manager);
+    public JdbcUserDetailsManager jdbcUserDetailsManager(DataSource dataSource) {
+        return new JdbcUserDetailsManager(dataSource);
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public DaoAuthenticationProvider daoAuthenticationProvider(JdbcUserDetailsManager jdbcUserDetailsManager, PasswordEncoder passwordEncoder) {
+        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
+        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder);
+        daoAuthenticationProvider.setUserDetailsService(jdbcUserDetailsManager);
+        return daoAuthenticationProvider;
+    }
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http, DaoAuthenticationProvider daoAuthenticationProvider) throws Exception {
         http
-                .csrf(csrf -> csrf.disable()) // Отключает CSRF защиту (обычно используется для REST API).
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers(("/employees/public/**")).permitAll() // Разрешает доступ к /employees/public/** всем пользователям.
-                        .requestMatchers(("/employees/user/**")).hasRole("USER") // Разрешает доступ к /employees/user/** только пользователям с ролью USER.
-                        .requestMatchers(("/employees/admin/**")).hasRole("ADMIN") // Разрешает доступ к /employees/admin/** только пользователям с ролью ADMIN.
-                        .requestMatchers(("/products/public/**")).permitAll()
-                        .requestMatchers(("/products/customer/**")).hasRole("CUSTOMER")
-                        .requestMatchers(("/products/manager/**")).hasRole("MANAGER")
-                        .anyRequest().authenticated() // Все остальные запросы требуют аутентификации.
+                .authenticationProvider(daoAuthenticationProvider)
+                .csrf(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/user/**").hasRole("USER")
+                        .requestMatchers("/", "/login/**", "/public/**", "/h2-console/**", "/swagger-ui/**").permitAll()
+                        .anyRequest().authenticated()
                 )
-                .formLogin(withDefaults()); // Включает форму входа по умолчанию.
+                .headers(headers -> headers.frameOptions().sameOrigin())
+                .formLogin(Customizer.withDefaults())
+                .logout(logout -> logout.permitAll());
 
-        return http.build(); // Строит и возвращает цепочку фильтров безопасности.
+        return http.build();
     }
-
 }
