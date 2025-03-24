@@ -1,5 +1,6 @@
 package de.ait.javalessons.controller;
 
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,22 +8,23 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
     @GetMapping("/")
-    public String homepage() {
-        return "Main page";
+    public String homepage(){
+        return "Главная страница";
     }
 
     @GetMapping("/public/info")
-    public String publishInfoPage() {
-        return "This page is available without authorization";
+    public String publishInfoPage(){
+        return "Страница доступна без авторизации";
     }
 
     @GetMapping("/user/dashboard")
-    public String userDashboard() {
-        return "Private users cabinet";
+    public String userDashboardPage(){
+        return "Личный кабинет пользователя";
     }
 
     @GetMapping("/admin/dashboard")
-    public String adminDashboard() {
-        return "Admins section";
+    public String adminDashnoard(){
+        return "Админский раздел";
     }
+
 }
