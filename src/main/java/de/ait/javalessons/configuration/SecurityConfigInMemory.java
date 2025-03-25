@@ -12,10 +12,10 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
-/**@Configuration**/ // Аннотация, указывающая, что этот класс содержит конфигурацию Spring.
+/*@Configuration*/ // Аннотация, указывающая, что этот класс содержит конфигурацию Spring.
 public class SecurityConfigInMemory {
-    /**
 
+/*
     @Bean // Аннотация, указывающая, что метод возвращает bean, который должен быть управляем Spring контейнером.
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(); // Создает и возвращает bean для кодирования паролей с использованием BCrypt.
@@ -35,8 +35,22 @@ public class SecurityConfigInMemory {
                 .roles("ADMIN")
                 .build();
 
+        // homework --
+
+        UserDetails customer = User.withUsername("customer")
+                .password(passwordEncoder.encode("customerpass"))
+                .roles("CUSTOMER")
+                .build();
+
+        UserDetails manager = User.withUsername("manager")
+                .password(passwordEncoder.encode("managerpass"))
+                .roles("MANAGER")
+                .build();
+
+        // -- homework
+
         // Возвращает менеджер пользователей, который хранит пользователей в памяти.
-        return new InMemoryUserDetailsManager(user, admin);
+        return new InMemoryUserDetailsManager(user, admin, customer, manager);
     }
 
     @Bean
@@ -47,6 +61,11 @@ public class SecurityConfigInMemory {
                         .requestMatchers(("/employees/public/**")).permitAll() // Разрешает доступ к /employees/public/** всем пользователям.
                         .requestMatchers(("/employees/user/**")).hasRole("USER") // Разрешает доступ к /employees/user/** только пользователям с ролью USER.
                         .requestMatchers(("/employees/admin/**")).hasRole("ADMIN") // Разрешает доступ к /employees/admin/** только пользователям с ролью ADMIN.
+                        // homework --
+                        .requestMatchers(("/products/public/**")).permitAll()
+                        .requestMatchers(("/products/customer/**")).hasRole("CUSTOMER")
+                        .requestMatchers(("/products/manager/add")).hasRole("MANAGER")
+                        // -- homework
                         .requestMatchers(("/h2-console")).permitAll()
                         .anyRequest().authenticated() // Все остальные запросы требуют аутентификации.
                 )
@@ -54,6 +73,6 @@ public class SecurityConfigInMemory {
         http.headers(headers -> headers.frameOptions().disable());
 
         return http.build(); // Строит и возвращает цепочку фильтров безопасности.
-    } **/
+    }*/
 
 }
