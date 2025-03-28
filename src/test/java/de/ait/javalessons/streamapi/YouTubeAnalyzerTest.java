@@ -1,5 +1,6 @@
 package de.ait.javalessons.streamapi;
 
+import de.ait.consultations.streamapi.YouTubeAnalyzer;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
