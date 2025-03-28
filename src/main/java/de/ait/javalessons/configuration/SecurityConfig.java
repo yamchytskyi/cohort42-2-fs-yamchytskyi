@@ -23,7 +23,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/public/**", "/h2-console/**").permitAll()
+                        .requestMatchers("/", "/public/**", "/h2-console/**", "/cars/**", "/accounts/**").permitAll()
                         .anyRequest().authenticated())
                 .logout(logout -> logout
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET")).permitAll());
